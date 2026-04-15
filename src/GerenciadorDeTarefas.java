@@ -1,17 +1,19 @@
 
+import java.util.ArrayList;
+
+
 public class GerenciadorDeTarefas {
-    
-      private ArrayList<Tarefa> lista;
- 
-    public GerenciadorTarefas() {
+
+    private ArrayList<Tarefa> lista;
+
+    public GerenciadorDeTarefas() {
         lista = new ArrayList<>();
     }
- 
-    // Adicionar Tarefa
+    
     public void adicionarTarefa(Tarefa t) {
         lista.add(t);
         
-    // Listar Tarefa
+        
     public void listarTarefas() {
         if (lista.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
@@ -21,12 +23,10 @@ public class GerenciadorDeTarefas {
 
                 System.out.println(i + " - " + t.getTitulo()
                         + " | " + t.getDescricao()
-                        + " | Status: " + (t.isConcluida()? "Concluída" : "Pendente"));
+                        + " | Status: " + (t.isConcluida() ? "Concluída" : "Pendente"));
             }
         }
     }
-    
-    //Concluir Tarefa
     public void concluirTarefa(int indice) {
         if (indice >= 0 && indice < lista.size()) {
             lista.get(indice).marcarComoConcluida();
@@ -36,4 +36,3 @@ public class GerenciadorDeTarefas {
         }
     }
 }
-
