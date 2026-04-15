@@ -1,6 +1,17 @@
 
 public class GerenciadorDeTarefas {
-
+    
+      private ArrayList<Tarefa> lista;
+ 
+    public GerenciadorTarefas() {
+        lista = new ArrayList<>();
+    }
+ 
+    // Adicionar Tarefa
+    public void adicionarTarefa(Tarefa t) {
+        lista.add(t);
+        
+    // Listar Tarefa
     public void listarTarefas() {
         if (lista.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
@@ -14,6 +25,8 @@ public class GerenciadorDeTarefas {
             }
         }
     }
+    
+    //Concluir Tarefa
     public void concluirTarefa(int indice) {
         if (indice >= 0 && indice < lista.size()) {
             lista.get(indice).marcarComoConcluida();
