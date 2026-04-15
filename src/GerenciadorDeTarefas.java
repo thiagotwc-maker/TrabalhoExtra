@@ -1,12 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author 1091809
- */
 public class GerenciadorDeTarefas {
-    
+
+    public void listarTarefas() {
+        if (lista.isEmpty()) {
+            System.out.println("Nenhuma tarefa cadastrada.");
+        } else {
+            for (int i = 0; i < lista.size(); i++) {
+                Tarefa t = lista.get(i);
+
+                System.out.println(i + " - " + t.getTitulo()
+                        + " | " + t.getDescricao()
+                        + " | Status: " + (t.isConcluida()? "Concluída" : "Pendente"));
+            }
+        }
+    }
+    public void concluirTarefa(int indice) {
+        if (indice >= 0 && indice < lista.size()) {
+            lista.get(indice).marcarComoConcluida();
+            System.out.println("Tarefa concluída!");
+        } else {
+            System.out.println("Índice inválido!");
+        }
+    }
 }
+
