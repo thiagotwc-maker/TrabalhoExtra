@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 
-
 public class GerenciadorDeTarefas {
 
     private ArrayList<Tarefa> lista;
@@ -12,8 +11,8 @@ public class GerenciadorDeTarefas {
     
     public void adicionarTarefa(Tarefa t) {
         lista.add(t);
-        
-        
+    }
+
     public void listarTarefas() {
         if (lista.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
