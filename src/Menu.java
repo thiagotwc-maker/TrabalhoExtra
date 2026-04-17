@@ -19,7 +19,7 @@ public class Menu {
         //Se for necessario
         return opcao;
         
-        switch (opcao) {
+        switch (opcao){
             case 1:
                 adicionarTarefa();
                 break;
@@ -33,7 +33,7 @@ public class Menu {
                 break;
                 
             case 4:
-                //criar função exibir status da tarefa
+                exibirStatus();
                 break;
                 
             case 5:
