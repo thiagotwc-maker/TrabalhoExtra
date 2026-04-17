@@ -17,7 +17,7 @@ public class Menu {
         scanner.nextLine();
         
         //Se for necessario
-        //return opcao;
+        return opcao;
         
         switch (opcao) {
             case 1:
