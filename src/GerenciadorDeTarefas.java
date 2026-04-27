@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class GerenciadorDeTarefas {
 
-    private ArrayList<Tarefa> lista;
+    private ArrayList<Tarefa> lista;  
 
     public GerenciadorDeTarefas() {
         lista = new ArrayList<>();
