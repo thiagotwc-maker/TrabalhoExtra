@@ -12,9 +12,8 @@ public class Menu {
         System.out.println("Escolha um opção");
         System.out.println("[1] Criar tarefa ");
         System.out.println("[2] Listar tarefas ");
-        System.out.println("[3] Marcar tarefa como conlcuida ");
-        System.out.println("[4] Exibir status da tarefa ");
-        System.out.println("[5] Sair (Encerrar Sistema) ");
+        System.out.println("[3] Marcar tarefa como concluida ");
+        System.out.println("[4] Sair (Encerrar Sistema) ");
         
         int opcao= scanner.nextInt();
         
@@ -30,18 +29,15 @@ public class Menu {
                 break;
                 
             case 2:
-                gerenciador.listarTarefa();
+                funcao.listarTarefas();
                 break;
                 
             case 3:
-                concluirTarefa();
+                funcao.concluirTarefa(int indice);
                 break;
+                
                 
             case 4:
-                exibirStatus();
-                break;
-                
-            case 5:
                 System.out.println("Saindo");
                 break;
         }
