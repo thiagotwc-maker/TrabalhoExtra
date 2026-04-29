@@ -32,8 +32,6 @@ public class GerenciadorDeTarefas {
         }
     }
 
-
-
     public void concluirTarefa(int indice) {
         if (indice >= 0 && indice < lista.size()) {
             lista.get(indice).marcarComoConcluida();
@@ -41,6 +39,14 @@ public class GerenciadorDeTarefas {
         } else {
             System.out.println("Índice inválido!");
         }
+        
+        // Exibir Status Funcional - JP
+        public void exibirStatus() {
+        if (lista.isEmpty()) {
+            System.out.println("Nenhuma tarefa cadastrada.");
+            return;
+        }
+
     }
     
 }
