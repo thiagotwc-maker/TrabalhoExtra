@@ -5,26 +5,22 @@ public class GerenciadorDeTarefas {
 
     private ArrayList<Tarefa> lista;
 
-    public GerenciadorDeTarefas() {
+   public GerenciadorDeTarefas() {
         lista = new ArrayList<>();
     }
-    
+
     public void adicionarTarefa(Tarefa t) {
         lista.add(t);
+        System.out.println("Tarefa adicionada com sucesso!");
     }
+
     public void listarTarefas() {
         if (lista.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
-        } else {
-            for (int i = 0; i < lista.size(); i++) {
-                Tarefa t = lista.get(i);
-
-                System.out.println(i + " - " + t.getTitulo()
-                        + " | " + t.getDescricao()
-                        + " | Status: " + (t.isConcluida() ? "Concluída" : "Pendente"));
-            }
+            return;
         }
-    }
+
+
     public void concluirTarefa(int indice) {
         if (indice >= 0 && indice < lista.size()) {
             lista.get(indice).marcarComoConcluida();
