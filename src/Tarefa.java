@@ -9,6 +9,11 @@ public class Tarefa {
         this.descricao = descricao;
         this.concluida = concluida;
     }
+
+    public Tarefa() {
+    }
+    
+    
     
     public void marcarComoConcluida(){
         

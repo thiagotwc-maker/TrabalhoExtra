@@ -3,7 +3,12 @@ import java.util.Scanner;
 
 public class Menu {
     
-    public static int menu(Scanner scanner){
+    public static int menu(){
+        
+        GerenciadorDeTarefas funcao = new GerenciadorDeTarefas();
+                
+        Scanner scanner = new Scanner(System.in);
+        
         System.out.println("Escolha um opção");
         System.out.println("[1] Criar tarefa ");
         System.out.println("[2] Listar tarefas ");
@@ -20,8 +25,8 @@ public class Menu {
         return opcao;
         
         switch (opcao){
-            case 1:
-                adicionarTarefa();
+            case 1:Tarefa tarefa =  new Tarefa();
+                funcao.adicionarTarefa(tarefa);
                 break;
                 
             case 2:
