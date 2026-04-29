@@ -19,6 +19,19 @@ public class GerenciadorDeTarefas {
             System.out.println("Nenhuma tarefa cadastrada.");
             return;
         }
+        
+        //Atualização for - JP
+        
+         for (int i = 0; i < lista.size(); i++) {
+            Tarefa t = lista.get(i);
+            String status = t.isConcluida() ? "Concluída" : "Pendente";
+
+            System.out.println(i + " - " + t.getTitulo()
+                    + " | " + t.getDescricao()
+                    + " | Status: " + status);
+        }
+    }
+
 
 
     public void concluirTarefa(int indice) {
