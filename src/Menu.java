@@ -5,15 +5,16 @@ public class Menu {
     
     public static int menu(){
         
-        GerenciadorDeTarefas funcao = new GerenciadorDeTarefas();
-                
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Escolha um opção");
-        System.out.println("[1] Criar tarefa ");
-        System.out.println("[2] Listar tarefas ");
-        System.out.println("[3] Marcar tarefa como concluida ");
-        System.out.println("[4] Sair (Encerrar Sistema) ");
+       GerenciadorDeTarefas gerenciador = new GerenciadorDeTarefas();
+        int opcao;
+ 
+        do {
+            System.out.println("\nEscolha uma opção:");
+            System.out.println("[1] Criar tarefa");
+            System.out.println("[2] Listar tarefas");
+            System.out.println("[3] Marcar tarefa como concluída");
+            System.out.println("[4] Exibir status");
+            System.out.println("[5] Sair");
         
         opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
@@ -29,7 +30,9 @@ public class Menu {
                     Tarefa tarefa = new Tarefa(titulo, descricao);
                     gerenciador.adicionarTarefa(tarefa);
                     break;
+                    
         //atualizado case 1.0 - JV
+                    
                 case 2:
                     gerenciador.listarTarefas();
                     break;
@@ -39,7 +42,22 @@ public class Menu {
                     int indice = scanner.nextInt();
                     gerenciador.concluirTarefa(indice);
                     break;
+                    
         //atualizado case 2.0 - JV
-        }
+                    
+                case 4:
+                    gerenciador.exibirStatus();
+                    break;
+ 
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+ 
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        //bugs menu e reformatação - JV
+            
+        } while (opcao != 5);
     }
 }
