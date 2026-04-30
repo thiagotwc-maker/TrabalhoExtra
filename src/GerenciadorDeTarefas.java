@@ -33,12 +33,13 @@ public class GerenciadorDeTarefas {
     }
 
     public void concluirTarefa(int indice) {
-        if (indice >= 0 && indice < lista.size()) {
+         if (indice >= 0 && indice < lista.size()) {
             lista.get(indice).marcarComoConcluida();
             System.out.println("Tarefa concluída!");
         } else {
             System.out.println("Índice inválido!");
         }
+    }  
         
         // Exibir Status Funcional - JP
         public void exibirStatus() {
@@ -47,6 +48,11 @@ public class GerenciadorDeTarefas {
             return;
         }
 
+        for (int i = 0; i < lista.size(); i++) {
+            Tarefa t = lista.get(i);
+            String status = t.isConcluida() ? "Concluída" : "Pendente";
+
+            System.out.println(i + " - " + t.getTitulo() + " -> " + status);
+        }
     }
-    
 }
