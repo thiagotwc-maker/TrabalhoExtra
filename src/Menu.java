@@ -1,11 +1,10 @@
-
 import java.util.Scanner;
-
+ 
 public class Menu {
-    
-    public static int menu(){
-        
-       GerenciadorDeTarefas gerenciador = new GerenciadorDeTarefas();
+ 
+    public static void menu(Scanner scanner) {
+ 
+        GerenciadorDeTarefas gerenciador = new GerenciadorDeTarefas();
         int opcao;
  
         do {
@@ -15,8 +14,8 @@ public class Menu {
             System.out.println("[3] Marcar tarefa como concluída");
             System.out.println("[4] Exibir status");
             System.out.println("[5] Sair");
-        
-        opcao = scanner.nextInt();
+ 
+            opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
  
             switch (opcao) {
@@ -30,9 +29,7 @@ public class Menu {
                     Tarefa tarefa = new Tarefa(titulo, descricao);
                     gerenciador.adicionarTarefa(tarefa);
                     break;
-                    
-        //atualizado case 1.0 - JV
-                    
+//switch case 1 - JV
                 case 2:
                     gerenciador.listarTarefas();
                     break;
@@ -42,9 +39,7 @@ public class Menu {
                     int indice = scanner.nextInt();
                     gerenciador.concluirTarefa(indice);
                     break;
-                    
-        //atualizado case 2.0 - JV
-                    
+//switch case 2 e 3 - JV
                 case 4:
                     gerenciador.exibirStatus();
                     break;
@@ -56,8 +51,7 @@ public class Menu {
                 default:
                     System.out.println("Opção inválida!");
             }
-        //bugs menu e reformatação - JV
-            
+//bugs menu e concatenação - JV e JP 
         } while (opcao != 5);
     }
 }
