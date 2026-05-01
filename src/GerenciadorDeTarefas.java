@@ -12,7 +12,6 @@ public class GerenciadorDeTarefas {
     public void adicionarTarefa(Tarefa t) {
         lista.add(t);
     }
-
     public void listarTarefas() {
         if (lista.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
@@ -32,6 +31,17 @@ public class GerenciadorDeTarefas {
             System.out.println("Tarefa concluída!");
         } else {
             System.out.println("Índice inválido!");
+        }
+    }
+    public void exibirStatus(){
+         if (lista.isEmpty()) {
+            System.out.println("Nenhuma tarefa cadastrada.");
+        } else {
+            for (int i = 0; i < lista.size(); i++) {
+                Tarefa t = lista.get(i);
+                String status = t.isConcluida() ? "Concluida" : "Pendente";
+                System.out.println(i + " - " + t.getTitulo() + " -> " + status);
+            }
         }
     }
 }
